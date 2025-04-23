@@ -30,22 +30,4 @@ def recommend_clubs(
     return [club for score, club in sorted_matches[:max_results]]
 
 
-# Example usage
-
-from models import GolferProfile
-from recommend import recommend_clubs
-from sample_data import sample_clubs
-
-my_profile = GolferProfile(
-    golfer_id="g001",
-    name="Jamie",
-    handicap=12.0,
-    preferred_play_style="balanced",
-    experience_level="intermediate"
-)
-
-recommendations = recommend_clubs(my_profile, sample_clubs)
-
-for club in recommendations:
-    print(f"✅ {club.name} ({club.type}) — Best for {club.play_style} players, handicap {club.handicap_range_min}-{club.handicap_range_max}")
 

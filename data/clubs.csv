@@ -1,0 +1,6 @@
+club_id,name,brand,type,loft,shaft_flex,handicap_range_min,handicap_range_max,play_style,description
+drv001,TaylorMade Stealth 2,TaylorMade,driver,9.0,stiff,5,15,aggressive,Power-focused driver with low spin and high ball speed.
+irn001,Callaway Apex Pro 21,Callaway,iron,34.0,regular,5,12,balanced,Forged feel with modern distance tech.
+wge001,Titleist Vokey SM9,Titleist,wedge,56.0,stiff,0,20,conservative,High spin and precision around the green.
+ptt001,Odyssey White Hot OG,Odyssey,putter,,None,0,30,balanced,Classic insert feel with a timeless design.
+wd001,Ping G430 Max Fairway,Ping,wood,15.0,senior,10,25,conservative,Forgiving fairway wood for max launch.

@@ -1,7 +1,7 @@
 import argparse
 from models import GolferProfile
 from recommend import recommend_clubs
-from sample_data import sample_clubs
+from load_from_csv import load_clubs_from_csv
 
 def main():
     parser = argparse.ArgumentParser(description="Golf Club Recommendation Tool")
@@ -14,6 +14,12 @@ def main():
 
     args = parser.parse_args()
 
+    clubs = load_clubs_from_csv("data/clubs.csv")
+
+    print(f"\n📦 Loaded {len(clubs)} clubs from CSV.")
+    for c in clubs:
+        print(f"- {c.name} ({c.type}), {c.play_style}, Handicap: {c.handicap_range_min}-{c.handicap_range_max}")
+
     profile = GolferProfile(
         golfer_id="cli_user",
         name="CLI User",
@@ -21,8 +27,9 @@ def main():
         preferred_play_style=args.play_style,
         experience_level=args.experience,
     )
+    print(f"\n👤 Profile: Handicap={profile.handicap}, Play Style={profile.preferred_play_style}, Club Type={args.club_type}")
 
-    results = recommend_clubs(profile, sample_clubs, club_type=args.club_type, max_results=args.max)
+    results = recommend_clubs(profile, clubs, club_type=args.club_type, max_results=args.max)
 
     print("\n🏌️ Recommended Clubs:")
     for club in results:
@@ -30,3 +37,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
