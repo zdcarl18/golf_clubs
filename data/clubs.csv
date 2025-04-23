@@ -1,6 +1,6 @@
-club_id,name,brand,type,loft,shaft_flex,handicap_range_min,handicap_range_max,play_style,description
-drv001,TaylorMade Stealth 2,TaylorMade,driver,9.0,stiff,5,15,aggressive,Power-focused driver with low spin and high ball speed.
-irn001,Callaway Apex Pro 21,Callaway,iron,34.0,regular,5,12,balanced,Forged feel with modern distance tech.
-wge001,Titleist Vokey SM9,Titleist,wedge,56.0,stiff,0,20,conservative,High spin and precision around the green.
-ptt001,Odyssey White Hot OG,Odyssey,putter,,None,0,30,balanced,Classic insert feel with a timeless design.
-wd001,Ping G430 Max Fairway,Ping,wood,15.0,senior,10,25,conservative,Forgiving fairway wood for max launch.
+club_id,name,brand,type,loft,shaft_flex,shaft_material,head_material,length,lie_angle,swing_weight,launch_angle,spin_rate,forgiveness_rating,distance_rating,workability_rating,adjustable,price,year_released,player_gender,target_audience,play_style,handicap_range_min,handicap_range_max,description,image_url
+drv001,TaylorMade Stealth 2,TaylorMade,driver,9.0,stiff,graphite,titanium,45.75,56.0,D1,13.5,2200,9,10,7,true,549.99,2023,men,advanced,aggressive,5,15,Power-focused driver with low spin and high ball speed,https://upload.wikimedia.org/wikipedia/commons/7/7e/TaylorMade_Stealth_2_Driver.jpg
+drv002,Callaway Rogue ST Max,Callaway,driver,10.5,regular,graphite,titanium,45.5,58.0,D2,14.2,2500,10,9,6,true,499.99,2022,men,game improvement,balanced,10,25,High forgiveness driver with adjustable hosel,https://upload.wikimedia.org/wikipedia/commons/a/a3/Callaway_Rogue_ST_Max_Driver.jpg
+irn001,Ping G430 Iron,Ping,iron,28.5,regular,steel,steel,38.0,62.0,D0,19.0,6000,8,8,5,false,169.00,2023,unisex,game improvement,conservative,15,30,Consistent performance with high launch and forgiveness,https://www.ping.com/-/media/Images/Clubs/Irons/G430-Irons/iron-hero-zoom.png
+irn002,Titleist T100,Titleist,iron,34.0,stiff,steel,steel,37.5,61.0,D2,18.5,6800,5,6,9,false,199.00,2023,men,tour,aggressive,0,10,Shot shaping iron for advanced players,https://www.titleist.com/dw/image/v2/BDBD_PRD/on/demandware.static/-/Sites-titleist-master/default/dwa055ab5f/Images/Clubs/Irons/2023-T100-Gallery-1-1-1.png
+wedge001,Cleveland RTX ZipCore,Cleveland,wedge,56.0,regular,steel,steel,35.25,64.0,D5,30.0,7400,6,7,8,false,149.99,2022,women,all-levels,balanced,5,25,Great spin and control around the greens,https://upload.wikimedia.org/wikipedia/commons/b/b0/Cleveland_RTX_ZipCore_Wedge.jpg

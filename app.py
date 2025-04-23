@@ -13,6 +13,11 @@ play_style = st.sidebar.selectbox("Play Style", ["aggressive", "balanced", "cons
 experience = st.sidebar.selectbox("Experience Level", ["beginner", "intermediate", "advanced"])
 club_type = st.sidebar.selectbox("Club Type (optional)", ["", "driver", "wood", "iron", "wedge", "putter"])
 
+# Additional filters
+max_price = st.sidebar.slider("Max Price", min_value=100, max_value=1000, value=1000, step=50)
+gender_filter = st.sidebar.selectbox("Player Gender (optional)", ["", "men", "women", "unisex"])
+
+
 # Submit button
 if st.sidebar.button("Get Recommendations"):
 
@@ -28,17 +33,23 @@ if st.sidebar.button("Get Recommendations"):
     results = recommend_clubs(
         profile,
         clubs,
-        club_type=club_type if club_type else None
+        club_type=club_type if club_type else None,
+        max_price=max_price,
+     gender=gender_filter if gender_filter else None
     )
 
     # Display results
     st.header("🏌️ Recommended Clubs")
     if results:
         for club in results:
-            st.markdown(f"**{club.name}** ({club.type}) — _{club.play_style}_  \n"
-                        f"Handicap: {club.handicap_range_min}-{club.handicap_range_max}  \n"
-                        f"Brand: {club.brand}  \n"
-                        f"{club.description}")
+            st.image(club.image_url, width=300)
+            st.markdown(f"### {club.name} ({club.type.title()})")
+            st.markdown(f"**Brand**: {club.brand}  \n"
+                f"**Flex**: {club.shaft_flex}, **Shaft**: {club.shaft_material}  \n"
+                f"**Forgiveness**: {club.forgiveness_rating}/10, **Distance**: {club.distance_rating}/10  \n"
+                f"**Price**: ${club.price:.2f}, **Year**: {club.year_released}  \n"
+                f"**Gender**: {club.player_gender}, **Adjustable**: {'Yes' if club.adjustable else 'No'}")
+            st.markdown(f"*{club.description}*")
             st.divider()
     else:
         st.warning("No matching clubs found. Try adjusting your profile.")

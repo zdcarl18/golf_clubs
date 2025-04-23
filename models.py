@@ -1,17 +1,34 @@
-from pydantic import BaseModel, Field
-from typing import Literal, Optional
+from pydantic import BaseModel
+from typing import Optional, Literal
 
 class GolfClub(BaseModel):
     club_id: str
     name: str
     brand: str
-    type: Literal['driver', 'wood', 'iron', 'wedge', 'putter']
-    loft: Optional[float] = Field(None, description="Loft angle in degrees")
-    shaft_flex: Optional[Literal['extra stiff', 'stiff', 'regular', 'senior', 'ladies']]
+    type: str
+    loft: Optional[float]
+    shaft_flex: Optional[str]
+    shaft_material: Optional[str]
+    head_material: Optional[str]
+    length: Optional[float]
+    lie_angle: Optional[float]
+    swing_weight: Optional[str]
+    launch_angle: Optional[float]
+    spin_rate: Optional[int]
+    forgiveness_rating: Optional[int]
+    distance_rating: Optional[int]
+    workability_rating: Optional[int]
+    adjustable: Optional[bool]
+    price: Optional[float]
+    year_released: Optional[int]
+    player_gender: Optional[str]
+    target_audience: Optional[str]
+    play_style: Optional[str]
     handicap_range_min: Optional[int]
     handicap_range_max: Optional[int]
-    play_style: Optional[Literal['aggressive', 'balanced', 'conservative']]
     description: Optional[str]
+    image_url: Optional[str]
+
 
 class GolferProfile(BaseModel):
     golfer_id: str
